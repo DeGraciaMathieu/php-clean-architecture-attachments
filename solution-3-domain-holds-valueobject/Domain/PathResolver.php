@@ -2,7 +2,9 @@
 
 namespace Domain;
 
+use Domain\FileReference;
+
 interface PathResolver
 {
-    public function resolve(string $id): string;
+    public function resolve(FileReference $fileReference): string;
 }

@@ -7,5 +7,5 @@ $rfp = new Rfp('1', $requirements);
 
 $resolver = new LocalPathResolver();
 
-echo $resolver->resolve($rfp->requirements());
+echo $resolver->resolve($rfp->getRequirementDocument());
 ````

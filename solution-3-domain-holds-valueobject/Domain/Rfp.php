@@ -11,7 +11,7 @@ class Rfp
         private FileReference $requirementsDocument,
     ) {}
 
-    public function getRequirementsDocument(): FileReference
+    public function getRequirementDocument(): FileReference
     {
         return $this->requirementsDocument;
     }
