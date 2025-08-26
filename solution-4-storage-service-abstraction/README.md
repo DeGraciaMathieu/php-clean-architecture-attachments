@@ -1,13 +1,11 @@
 # Storage service abstraction
  
 ```php
-$rfp = new Rfp('1', 'rfp-req-1.pdf');
+$requirements = new LocalFileReference('rfp-req-1.pdf', 'requirements', 'application/pdf');
 
-$pathResolver = new LocalPathResolver();
+$rfp = new Rfp('1', $requirements);
 
-$service = new RfpService($pathResolver);
+$resolver = new LocalPathResolver();
 
-$service->uploadRequirements($rfp, '');
-
-echo $service->requirementsReference($rfp);
+echo $resolver->resolve($rfp->getRequirementDocument());
 ```

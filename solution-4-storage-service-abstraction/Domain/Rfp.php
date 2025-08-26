@@ -10,4 +10,9 @@ class Rfp
         private string $title,
         private FileReference $requirementsDocument,
     ) {}
+
+    public function getRequirementDocument(): FileReference
+    {
+        return $this->requirementsDocument;
+    }
 }

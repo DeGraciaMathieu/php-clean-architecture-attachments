@@ -6,7 +6,6 @@ class FileReference
 {
     public function __construct(
         private string $id,
-        private string $kind,
         private ?string $mime,
     ) {
         $this->guard($id);
@@ -17,11 +16,6 @@ class FileReference
         return $this->id;
     }
     
-    public function kind(): string
-    {
-        return $this->kind;
-    }
-
     public function mime(): ?string
     {
         return $this->mime;
@@ -31,6 +25,10 @@ class FileReference
     {
         if ($id === '') {
             throw new \Exception('File id cannot be empty.');
+        }
+
+        if ($this->mime !== 'pdf' && $this->mime !== 'docx') {
+            throw new \Exception('File mime must be pdf or docx.');
         }
     }
 }
