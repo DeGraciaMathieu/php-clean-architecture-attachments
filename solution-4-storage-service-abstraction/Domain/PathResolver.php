@@ -4,7 +4,7 @@ namespace Domain;
 
 use Domain\FileReference;
 
-interface PathResolver
+interface FileService
 {
-    public function resolve(FileReference $fileReference): string;
+    public function retrieve(FileReference $fileReference): string;
 }

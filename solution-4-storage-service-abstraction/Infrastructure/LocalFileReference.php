@@ -11,13 +11,8 @@ class LocalFileReference implements FileReference
         private ?string $mime,
     ) {}
 
-    public function id(): string
+    public function path(): string
     {
-        return $this->id;
-    }
-
-    public function mime(): string
-    {
-        return $this->mime;
+        return __DIR__ . '/uploads/' . $this->id . '.' . $this->mime;
     }
 }

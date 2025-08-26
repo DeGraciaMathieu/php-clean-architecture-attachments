@@ -4,6 +4,5 @@ namespace Domain;
 
 interface FileReference
 {
-    public function id(): string;
-    public function mime(): ?string;
+    public function path(): string;
 }
